@@ -1,0 +1,19 @@
+{
+    "name": "andre-ortu/laravel-google-ads",
+    "description": "A laravel package for google ads",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "AndreOrtu\\LaravelGoogleAds\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "andreaortu",
+            "email": "andrea.ortu.9229@gmail.com"
+        }
+    ],
+    "require": {
+        "googleads/google-ads-php": "^12.0"
+    }
+}
