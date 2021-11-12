@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 trait Builder
 {
     protected $where;
+    protected $during = "";
 
     public function getQuery()
     {
@@ -40,9 +41,15 @@ trait Builder
         return $this;
     }
 
+    public function setDuring($during)
+    {
+        $this->during = "segments.date BETWEEN '{$during[0]}' AND '{$during[1]}'";
+        return $this;
+    }
+
     public function getWhere()
     {
-        $during = "segments.date DURING $this->date";
+        $during = $this->during === "" ? "segments.date DURING $this->date" : $this->during;
         if($this->where) {
             $where = Str::replaceLast("AND", "", $this->where);
             return "WHERE $during AND $where";
