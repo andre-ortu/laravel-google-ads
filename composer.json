@@ -14,6 +14,6 @@
         }
     ],
     "require": {
-        "googleads/google-ads-php": "^2.1"
+        "googleads/google-ads-php": "^12.1"
     }
 }
